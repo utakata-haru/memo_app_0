@@ -100,7 +100,7 @@ class MemoEditor extends HookWidget {
               Expanded(
                 child: ActionButton(
                   label: 'キャンセル',
-                  style: ActionButtonStyle.secondary,
+                  style: ActionButtonStyle.unified,
                   onPressed: isLoading ? null : onCancel,
                 ),
               ),
@@ -108,7 +108,7 @@ class MemoEditor extends HookWidget {
               Expanded(
                 child: ActionButton(
                   label: isEditMode ? '更新' : '保存',
-                  style: ActionButtonStyle.primary,
+                  style: ActionButtonStyle.unified,
                   onPressed: isLoading 
                       ? null 
                       : () => onSave?.call(controller.text),

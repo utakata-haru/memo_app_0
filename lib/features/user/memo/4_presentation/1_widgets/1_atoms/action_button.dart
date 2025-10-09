@@ -75,6 +75,26 @@ class ActionButton extends StatelessWidget {
           onPressed: isLoading ? null : onPressed,
           child: child,
         );
+      case ActionButtonStyle.unified:
+        return OutlinedButton(
+          onPressed: isLoading ? null : onPressed,
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+              width: 1.5,
+            ),
+            foregroundColor: Theme.of(context).colorScheme.primary,
+            backgroundColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+              vertical: 12,
+            ),
+          ),
+          child: child,
+        );
     }
   }
 }
@@ -92,6 +112,9 @@ enum ActionButtonStyle {
   
   /// テキストボタン
   text,
+  
+  /// 統一されたアウトラインボタン（キャンセル・保存ボタン用）
+  unified,
 }
 
 /// アイコンボタンAtomコンポーネント
